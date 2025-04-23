@@ -1,37 +1,32 @@
 # mcp-code-guidance
 
 #### 介绍
-这是一个使用Python 语言从0到1学习MCP Server的编码教程，同时也会学习 Python 语言编程基础
+这是一个使用Python 语言从0到1学习MCP Server的编码教程，同时也会学习 Python 语言编程基础。
 
-#### 软件架构
-软件架构说明
-
+#### 项目结构
+mcp-code-guidance/
+├── mcp-server-quickstart01/        # 最简单 MCP 服务只包含 tools
+├── tutorial/           # 从 0 到 1 的 MCP 开发教程
+└── ...                 # 其他 MCP 服务
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  安装uv
++ 下载 uv-aarch64-apple-darwin.tar.gz
+启动本地 python 服务，用于下载
+```
+python -m http.server 8181
+```
 
-#### 使用说明
+2.  添加用户本地bin目录到PATH
+```
+vi ~/.bash_profile
+export PATH="$HOME/.local/bin:$PATH"
+source ~/.bash_profile
+```
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+3.  创建虚拟环境
+```
+ uv venv --python /Library/Frameworks/Python.framework/Versions/3.11/bin/python3
+```
 
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
