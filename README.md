@@ -12,11 +12,18 @@ mcp-code-guidance/
 #### 安装教程
 
 1.  安装uv
-+ 下载 uv-aarch64-apple-darwin.tar.gz
-启动本地 python 服务，用于下载
++ 安装 uv 命令
+```
+ curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+install.sh 脚本会从 github 下载 uv-aarch64-apple-darwin.tar.gz 并解压到然后再安装。github.com 网络不好，可以手动下载，提供一个技巧。可在下载目录启动本地 python 服务用于下载该文件，同时修改install.sh的内容。
+
 ```
 python -m http.server 8181
 ```
+调整后的shell 脚本可以参考:
+[修改后的uv-install.sh](./tutorial/uv-install.sh)
+
 
 2.  添加用户本地bin目录到PATH
 ```
