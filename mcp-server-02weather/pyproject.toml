@@ -1,10 +1,13 @@
 [project]
-name = "mcp-server-quickstart01"
+name = "mcp-server-02weather"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "fastmcp>=2.2.2",
     "httpx>=0.28.1",
     "mcp[cli]>=1.6.0",
+    "pinyin>=0.4.0",
+    "python-dotenv>=1.1.0",
 ]

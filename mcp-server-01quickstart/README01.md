@@ -9,7 +9,7 @@ uv init -p3.11
 
 2. 创建虚拟环境
 ```
-uv venv --python /Library/Frameworks/Python.framework/Versions/3.11/bin/python3
+uv venv02 --python /Library/Frameworks/Python.framework/Versions/3.11/bin/python3
 ```
 
 3. 激活虚拟环境
@@ -21,6 +21,8 @@ source .venv/bin/activate  # Linux/MacOS环境
 4. 安装依赖
 ```
 uv add "mcp[cli]" httpx --index-url "https://pypi.tuna.tsinghua.edu.cn/simple/"
+uv pip install --python=3.11 "mcp[cli]" httpx --index-url "https://pypi.tuna.tsinghua.edu.cn/simple/"
+
 ```
 使用默认pipy镜像源可能会由于网速原因无法成功下载安装。此步骤设置为清华镜像源 https://pypi.python.org/simple。
 
