@@ -3,13 +3,12 @@
 ## 环境准备
 1. 创建项目
 ```
-cd mcp-server-quickstart01
-uv init -p3.11 
+uv init -p3.11 mcp-server-quickstart01
 ```
 
 2. 创建虚拟环境
 ```
-uv venv02 --python /Library/Frameworks/Python.framework/Versions/3.11/bin/python3
+uv venv --python /Library/Frameworks/Python.framework/Versions/3.11/bin/python3
 ```
 
 3. 激活虚拟环境
