@@ -38,3 +38,16 @@ source ~/.bash_profile
  uv venv --python /Library/Frameworks/Python.framework/Versions/3.11/bin/python3
 ```
 
+## gitee与github同步
+
+1.git remote add github https://github.com/JavaPentesters/mcp-code-guidance.git 
+作用是添加一个名为"github"的远程仓库地址到本地Git仓库配置中。
+主要功能包括：
++ 添加一个新的远程仓库引用
++ 命名为"github"（可自定义）
++ 指向指定的Git仓库URL
+
+2.git pull origin master
+
+3.git push -u github main --verbose
+JavaPentesters

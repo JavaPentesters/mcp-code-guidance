@@ -142,3 +142,4 @@ cython_debug/
 ./**/Pipfile.lock
 ./**/requirements.txt
 ./**/package-lock.json
+pyproject.toml

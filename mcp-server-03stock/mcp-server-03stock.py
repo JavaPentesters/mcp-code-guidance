@@ -25,11 +25,31 @@ class StockRepository:
     """股票数据仓库，负责数据访问层"""
 
     @staticmethod
-    def _convert_to_records(df: pd.DataFrame) -> List[Dict]:
+    def _convert_to_records(df: pd.DataFrame) -> Dict:
         """转换DataFrame为字典列表"""
         if df.empty:
             return []
-        return df.to_dict(orient='records')
+        records = df.to_dict(orient='records')
+        mapping = {
+            'code': '',
+            'name': '',
+            'industry': '',
+            'area': '',
+            'market': ''
+        }
+        # 转换字段名以匹配StockBasicInfo模型
+        for record in records:
+            if 'item' in record and record['item'] == '股票代码':
+                mapping['code'] = record.pop('value')
+            elif 'item' in record and record['item'] == '股票简称':
+                mapping['name'] = record.pop('value')
+            elif 'item' in record and record['item'] == '行业':
+                mapping['industry'] = record.pop('value')
+            elif 'item' in record and record['item'] == '地区':
+                mapping['area'] = record.pop('value')
+            elif 'item' in record and record['item'] == '市场':
+                mapping['market'] = record.pop('value')
+        return mapping
 
     async def get_stock_basic_info(self, stock_code: str) -> StockBasicInfo:
         """获取股票基本信息"""
@@ -37,7 +57,7 @@ class StockRepository:
         if df.empty:
             raise RuntimeError("未找到股票信息")
         
-        info_dict = self._convert_to_records(df)[0]
+        info_dict = self._convert_to_records(df)
         return StockBasicInfo(**info_dict)
 
 class StockService:
