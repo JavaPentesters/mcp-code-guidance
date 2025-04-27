@@ -1,0 +1,9 @@
+.python-version
+.venv 
+uv.lock
+__pycache__
+__pycache__/*
+pyproject.toml
+poetry.lock
+*.pyc
+*.pyo
