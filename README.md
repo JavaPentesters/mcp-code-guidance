@@ -1,17 +1,35 @@
 # mcp-code-guidance
 
-#### 介绍
-这是一个使用Python 语言从0到1学习MCP Server的编码教程，同时也会学习 Python 语言编程基础。
+### 介绍
+*mcp-code-guidance*是一个使用 Python 语言从 0 到 1 学习 MCP 与 A2A 协议的教程。
+MCP(Model-Context Protocol,)和A2A(Agent-to-Agent)是大模型应用中两个重要的协议,分别侧重于智能体与外部工具的交互以及智能体之间的协作。
 
-#### 项目结构
->mcp-code-guidance/
->├── mcp-server-quickstart01/        # 最简单 MCP 服务只包含 tools
->├── tutorial/           # 从 0 到 1 的 MCP 开发教程
->└── ...                 # 其他 MCP 服务
+MCP 协议是一种用于模型与外部环境交互的协议,它允许模型通过 API 与外部环境进行通信,并获取外部环境的信息。MCP 协议的主要特点是:
++ 支持多种外部环境,包括文本、图像、音频等。
++ 支持多种模型,包括大模型、小模型等。
 
-#### 安装教程
+[https://modelcontextprotocol.io/introduction](https://modelcontextprotocol.io/introduction
+)
 
-1.  安装uv
+## 项目结构
+mcp-code-guidance/
+├── LICENSE
+├── README.en.md
+├── README.md
+├── mcp-server-01quickstart # 最简单 MCP 服务只包含 tools
+├── mcp-server-02weather # 查询天气 MCP 服务
+├── mcp-server-03stock # 查询股票 MCP 服务
+├── my-project
+└── tutorial #  MCP与A2A 开发教程
+
+
+## 环境要求
++ python 3.10+
+
+
+## 安装步骤
+
+1.安装uv
 + 安装 uv 命令
 ```
  curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -22,32 +40,31 @@ install.sh 脚本执行时会从 github.com 下载 uv-aarch64-apple-darwin.tar.g
 ```shell
 python -m http.server 8181
 ```
-调整后的shell 脚本可以参考:
-[修改后的uv-install.sh](./tutorial/uv-install.sh)
-
+调整后的shell 脚本可以参考: [修改后的uv-install.sh](./tutorial/uv-install.sh)
 
 + 添加用户本地bin目录到PATH
-```
+```shell
 vi ~/.bash_profile
 export PATH="$HOME/.local/bin:$PATH"
 source ~/.bash_profile
 ```
 
-2.  创建虚拟环境
+2.**cd  mcp-code-guidance** 初始化项目，以mcp-server-01quickstart 为例
+
+
 ```shell
- uv venv --python /Library/Frameworks/Python.framework/Versions/3.11/bin/python3
-```
+# Create a new directory for our project
+uv init  mcp-server-01quickstart -p3.11 
+cd mcp-server-01quickstart
 
-## gitee与github同步
+# Create virtual environment and activate it
+uv venv
+source .venv/bin/activate
 
-1.git remote add github https://github.com/JavaPentesters/mcp-code-guidance.git 
-作用是添加一个名为"github"的远程仓库地址到本地Git仓库配置中。
-主要功能包括：
-+ 添加一个新的远程仓库引用
-+ 命名为"github"（可自定义）
-+ 指向指定的Git仓库URL
+# Install dependencies
+uv add "mcp[cli]" httpx
 
-2.git pull origin master
+# Create our server file
+touch mcp-server-01quickstart.py
 
-3.git push -u github main --verbose
-JavaPentesters
+

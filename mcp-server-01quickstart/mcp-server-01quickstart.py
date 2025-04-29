@@ -30,4 +30,4 @@ def custom_prompt(name: str) -> str:
 
 if __name__ == "__main__":
     # Initialize and run the server
-    mcp.run(transport='stdio', description="快速构建一个提供Tools、Resources、Prompts最简单的MCP服务")
+    mcp.run(transport='stdio')
