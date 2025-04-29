@@ -33,10 +33,10 @@ MCP Inspector 是专为MCP Server设计的交互式调试工具，支持开发�
 
 ### 客户端使用
 + cusor 客户端
+
 打开 Cursor Settings 窗口，添加一个新的 MCP Server，设置如下：
 
 ![mcp_curosr_server01](./img/mcp_curosr_server01.png)
-
 ```json
 {
   "mcpServers": {
@@ -54,7 +54,11 @@ MCP Inspector 是专为MCP Server设计的交互式调试工具，支持开发�
 ```
 
 
+
 + trae 客户端
+
+![mcp_01_add_trae.png](./img/mcp_01_add_trae.png)
+
 
 ### 功能描述
 + MCP 服务可以提供三种主要类型功能：
