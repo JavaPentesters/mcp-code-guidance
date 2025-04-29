@@ -12,6 +12,8 @@ MCP 协议是一种用于模型与外部环境交互的协议,它允许模型通
 )
 
 ## 项目结构
+
+```
 mcp-code-guidance/
 ├── LICENSE
 ├── README.en.md
@@ -21,7 +23,7 @@ mcp-code-guidance/
 ├── mcp-server-03stock # 查询股票 MCP 服务
 ├── my-project
 └── tutorial #  MCP与A2A 开发教程
-
+```
 
 ## 环境要求
 + python 3.10+
